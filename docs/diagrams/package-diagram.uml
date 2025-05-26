@@ -1,0 +1,27 @@
+@startuml
+package "Frontend" {
+    [Next.js App] as Next
+    [Components]
+    [Services]
+    [Styles]
+    [Pages]
+}
+
+package "Backend" {
+    [NestJS App] as Nest
+    [Posts Module] as Posts
+    [DTOs]
+    [Entities]
+    database "PostgreSQL" as Database
+}
+
+Next --> Components
+Next --> Services
+Next --> Styles
+Next --> Pages
+Services --> Nest
+Nest --> Posts
+Posts --> DTOs
+Posts --> Entities
+Posts --> Database
+@enduml 

@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+actor Usuario as User
+
+rectangle "Blog System" {
+    usecase "Ver Posts" as ViewPosts
+    usecase "Crear Post" as CreatePost
+    usecase "Actualizar Post" as UpdatePost
+    usecase "Eliminar Post" as DeletePost
+    usecase "Previsualizar Imagen" as PreviewImage
+    usecase "Establecer Fecha" as SetDate
+}
+
+User --> ViewPosts
+User --> CreatePost
+User --> UpdatePost
+User --> DeletePost
+CreatePost ..> PreviewImage : <<include>>
+CreatePost ..> SetDate : <<include>>
+UpdatePost ..> PreviewImage : <<include>>
+UpdatePost ..> SetDate : <<include>>
+@enduml 

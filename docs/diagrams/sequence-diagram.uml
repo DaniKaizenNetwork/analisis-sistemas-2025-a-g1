@@ -1,0 +1,36 @@
+@startuml
+actor Usuario as U
+participant "Frontend" as F
+participant "Backend" as B
+participant "PostsService" as S
+
+== Listar Posts ==
+U -> F: Accede a la aplicación
+F -> B: GET /posts
+B -> S: findAll()
+S --> B: Lista de posts
+B --> F: JSON response
+F --> U: Muestra posts
+
+== Crear Post ==
+U -> F: Crea nuevo post
+F -> B: POST /posts
+B -> S: create(CreatePostDto)
+S --> B: Nuevo post
+B --> F: JSON response
+F --> U: Confirma creación
+
+== Actualizar Post ==
+U -> F: Edita post existente
+F -> B: GET /posts/:id
+B -> S: findOne(id)
+S --> B: Post existente
+B --> F: JSON response
+F --> U: Muestra formulario de edición
+U -> F: Envía cambios
+F -> B: PATCH /posts/:id
+B -> S: update(id, UpdatePostDto)
+S --> B: Post actualizado
+B --> F: JSON response
+F --> U: Confirma actualización
+@enduml 
