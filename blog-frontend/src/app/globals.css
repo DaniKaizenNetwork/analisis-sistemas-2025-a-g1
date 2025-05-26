@@ -1,0 +1,320 @@
+:root {
+  --background-dark: #000000;
+  --background-gradient: radial-gradient(ellipse at top left, #f64fff 0%, #1a1a1d 100%);
+  
+  --card-background: #1c1d21;
+  --text-light: #f0f0f0;
+  --text-secondary: #a0a0b0;
+  --accent-pink: #ff007f;
+  --accent-cyan: #00ffff;
+  --border-color: #2a2b2f;
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+/* Reset y fondo con degradado creativo */
+body {
+  background: var(--background-gradient);
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-light);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent-pink);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Estado de carga y error */
+.loading, .error-container, .empty-state {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-background);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.error-container .button {
+  margin-top: 1rem;
+}
+
+.empty-state {
+  padding: 3rem;
+}
+
+.empty-state p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Grid de posts */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Botones */
+.button {
+  display: inline-block;
+  background-color: var(--accent-pink);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+  background-color: #e00070;
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--accent-pink);
+  border: 2px solid var(--accent-pink);
+}
+.button-secondary:hover {
+  background-color: var(--accent-pink);
+  color: var(--text-light);
+}
+
+.button-danger {
+  background-color: transparent;
+  color: #ff00d4;
+  border: 2px solid #ff00d4;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+}
+.button-danger:hover {
+  background-color: #ff00d4;
+  color: var(--text-light);
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 2px rgba(255, 0, 128, 0.5);
+}
+
+.form-help {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Personalizar el selector de fecha para modo oscuro */
+.form-group input[type="date"] {
+  color-scheme: dark;
+}
+
+.error-message {
+  color: #ff00d4;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Tarjetas de posts */
+.post-item {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(28, 6, 65, 0.729);
+}
+
+.post-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.post-item h2 {
+  margin-bottom: 1rem;
+}
+
+.post-item h2 a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.post-item h2 a:hover {
+  color: var(--accent-pink);
+}
+
+.post-item p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.post-item small {
+  color: #bababa6a;
+  font-size: 0.8rem;
+}
+
+/* Post detallado */
+.post-detail-content {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+.post-detail-content p {
+  white-space: pre-wrap;
+  color: var(--text-light);
+}
+.post-detail-content small {
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 1rem;
+}
+
+/* Encabezado de página */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Imágenes en posts */
+.post-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post-item:hover .post-image img {
+  transform: scale(1.05);
+}
+
+/* Vista previa de imagen */
+.image-preview {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.image-preview-controls {
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+/* Formulario de imagen */
+input[type="url"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+}
+
+input[type="url"]:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 2px rgba(255, 0, 128, 0.5);
+}
