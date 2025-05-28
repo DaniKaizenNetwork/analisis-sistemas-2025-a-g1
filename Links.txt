@@ -1,0 +1,7 @@
+links :
+
+drive : https://drive.google.com/file/d/10Y569OLoASSjHObtvD1viyga91xtJoFe/view?usp=sharing
+
+git : https://github.com/DaniKaizenNetwork/analisis-sistemas-2025-a-g1/tree/feature/project
+
+trello: https://trello.com/invite/b/6833d065974ee590434a285c/ATTI5bf2068171579925ed404cf0f012b24287535EF1/backlog-blog-personal
